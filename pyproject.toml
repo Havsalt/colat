@@ -1,0 +1,36 @@
+[project]
+name = "colat"
+dynamic = ["version"]
+description = "Copy color under cursor to clipboard"
+authors = [
+    { name = "FloatingInt", email = "knutolaihelgesen@gmail.com" }
+]
+dependencies = [
+    "actus>=0.7.1",
+    "pyautogui>=0.9.54",
+    "pyperclip>=1.9.0",
+    "keyboard>=0.13.5",
+]
+readme = "README.md"
+requires-python = ">= 3.10"
+
+[project.scripts]
+"main" = "colat:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.version]
+path = "colat/__init__.py"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+include = ["colat/**", "colat.bat"]
+exclude = ["colat/**/__pycache__"]
