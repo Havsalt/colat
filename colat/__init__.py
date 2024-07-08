@@ -1,5 +1,5 @@
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 import argparse
 
@@ -41,6 +41,6 @@ def main() -> int:
     r, g, b = pyautogui.pixel(*map(int, point))
     hex_code = f"#{r:02X}{g:02X}{b:02X}"
     pyperclip.copy(hex_code)
-    info(f"Copied hex code `$[{hex_code}]` to clipboard:")
+    info(f"Copied hex code `$[{hex_code}]` to clipboard")
 
     return 0
